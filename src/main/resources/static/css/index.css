@@ -1,0 +1,20 @@
+.loginBox{
+    background: rgba(173,181,189,0.8);
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+#loginBtn, .nav-btn {
+    font-size: 1.25rem;
+    border: none;
+    outline: none;
+    background-color: #f7f7f7;
+    color: #231814;
+    margin: 0 1rem;
+}
+#loginBtn:focus {
+    outline: none;
+    box-shadow: none;
+}
+#loginBtn:hover {
+    background: #231814;
+    color: #f7f7f7;
+}

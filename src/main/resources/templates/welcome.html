@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="js/user.js"></script>
+    <title>Login Page</title>
+    <meta name="description" content="Login Assessment">
+</head>
+<body>
+    <div th:insert="fragments/navbar.html :: navbar"></div>
+    <section class="container-fluid bg-light">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-12 shadow-lg p-5 mt-5 mb-2 text-center">
+                <button onclick="changeLanguage('en')" class="btn btn-secondary">
+                    Change to English
+                </button>
+                <button onclick="changeLanguage('cn')" class="btn btn-secondary">
+                    Change to Chinese
+                </button>
+                <div id="siteContent">
+                    <h1 id="lang_welcome">Welcome to Assessment Site</h1>
+                    <h3> <span id="lang_username">Username: </span><span id="username" th:text="${#authentication.getPrincipal().getUsername()}"></span></h3>
+                    <h3> <span id="lang_name">Name: </span><span id="name" sec:authentication="name">></span></h3>
+                    <h3> <span id="lang_role">Role: </span><span id="role" th:text="${#authentication.getAuthorities()}"></span></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container-fluid bg-light">
+        <div class="row justify-content-center">
+            <!-- <div class="col-lg-6">
+                <form class="d-flex">
+                    <input name="encoder" id="encoder" class="form-control" type="encode" placeholder="Encoder"
+                        aria-label="Search" data-search>
+                    <button class="rounded" id="encoderBtn" type="submit">
+                        Encode</button>
+                </form>
+            </div> -->
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/scrollTop.js"></script>
+    <script src="js/base.js"></script>
+    <script>user()</script>
+    <script src="js/lang.js"></script>
+</body>
+
+</html>
